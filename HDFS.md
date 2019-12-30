@@ -33,6 +33,7 @@ sudo apt-get install pdsh
 ```
 su
 ```
+
 ![](su.png)
 
 ## 5.配置环境
@@ -49,6 +50,7 @@ export PATH JAVA_HOME CLASSPATHo
 激活环境：
 source /etc/profile
 ```
+
 ![](profile.png)
 
 ### 5.2 设置ssh远程无密码登录
@@ -61,6 +63,7 @@ chmod 0600 ~/.ssh/authorized_keys
 ```
 ssh localhost
 ```
+
 ![](ssh.png)
 
 ## 6.搭建环境
@@ -70,12 +73,16 @@ ssh localhost
 
 ### 6.1 {HADOOP_HOME}/etc/hadoop/core-site.xml
 指出使用的文件系统时啥，在哪，以及hadoop运行期间产生的文件，放在那，这个需要在每台设备上面配置。在core-site.xml中添加信息：
+
 ![](core.png)
+
 其中的fs.Default的值修改为自己的ip地址。
 
 ### 6.2 {HADOOP_HOME}/etc/hadoop/hdfs-site.xml
 在hdfs-site.xml中添加信息：
+
 ![](hdfs.png)
+
 其中的值根据自己的Hadoop版本修改。
 
 ### 6.3 /etc/hosts
@@ -98,6 +105,7 @@ hadoop由一台master带起若干台slave（在hadoop3中改为worker）。然�
 ```
 export JAVA_HOME=/usr/lib/java-1.8.0/jdk1.8.0_131
 ```
+
 ![](env.png)
 
 ### 6.5 修改防火墙设置
@@ -109,6 +117,7 @@ iptables -I INPUT -p tcp -m tcp --dport 9870 -m state --state NEW,ESTABLISHED -j
 
 ### 6.6 修改启动文件
 在start-hdfs.sh中添加：
+
 ![](startdfs.png)
 
 ### 6.7 格式化namenode
@@ -124,14 +133,18 @@ hdfs namenode -format
 sbin/start-dfs.sh
 ```
 启动成功的话，运行jps命令会显示状况：
+
 ![](jps.png)
+
 如果是分布式启动的话，则：
 ```
 hdfs --daemon start namenode  //master 运行这个命令
 hdfs --daemon start datanode  //slave  运行这个命令
 ```
 使用浏览器通过访问网址http://192.168.3.39:9780/可以查看HDFS当前的情况。
+
 ![](www.png)
+
 ### 7.2 python调用
 ```
 pip install pyhdfs
@@ -176,6 +189,7 @@ False
 True
 ```
 ![](py.png)
+
 [全部接口文档](https://pyhdfs.readthedocs.io/en/latest/)
 
 ### 7.4 关闭
