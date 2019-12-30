@@ -141,7 +141,7 @@ sbin/start-dfs.sh
 hdfs --daemon start namenode  //master 运行这个命令
 hdfs --daemon start datanode  //slave  运行这个命令
 ```
-使用浏览器通过访问网址http://192.168.3.39:9780/可以查看HDFS当前的情况。
+使用浏览器通过访问网址http://192.168.1.10:9780/ 可以查看HDFS当前的情况。
 
 ![](www.png)
 
