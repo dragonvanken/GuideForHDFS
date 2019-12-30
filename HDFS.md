@@ -9,7 +9,9 @@ jdk:可以在[oracle](https://www.oracle.com/technetwork/java/javase/downloads/i
 Hadoop:在[apache](http://www.apache.org/dyn/closer.cgi/hadoop/common/)官网下载
 
 下载完成:
-![](download.png)
+
+![](./download.png)
+
 解压：
 ```
 在usr/lib下创建文件夹java-1.8.0,将文件解压在其中。
